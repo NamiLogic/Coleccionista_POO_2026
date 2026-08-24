@@ -1,6 +1,6 @@
 public class Personaje {
 
-  String nombre;
+  private String nombre;
 
   String apellido;
 
@@ -8,23 +8,63 @@ public class Personaje {
 
   boolean esta_vivo = true;
 
-  private int edad;
 
 
 
-  //Si llega edad negativa, que sea 18
 
-  public void ingresarEdad(int edad){
 
-    if (edad < 0){
 
-      System.out.println("La edad no puede ser negativa, asi que le asignamos a tu personaje la edad de 18");
+  //Se va a comportar como un metodo seteador
 
-      this.edad = 18;
+  public void validarNombre(String nombre ){
 
-    }else{
+    nombre = nombre.toUpperCase();
 
-      this.edad = edad;
+    if (nombre.length() < 1) {
+
+      System.out.print("El nombre del personaje no puede quedar vacio");
+
+    }
+
+    switch (nombre) {
+
+      case "WEON":
+
+        this.nombre = "****";
+
+        break;
+
+      case "ESTUPIDO":
+
+        this.nombre = "****";
+
+        break;
+
+      case "SOPENKO":
+
+        this.nombre = "****";
+
+        break;
+
+      case "SOPENCO":
+
+        this.nombre = "****";
+
+        break;
+
+      case "IDIOTA":
+
+        this.nombre = "****";
+
+        break;
+
+    
+
+      default:
+
+        this.nombre = nombre;
+
+        break;
 
     }
 
@@ -32,13 +72,13 @@ public class Personaje {
 
 
 
-  public int obtenerEdad(){
+  //Se le conoce como el metodo Getter. Sirve para obtener el valor de un atributo
 
-    return this.edad;
+  public String mostrarNombre(){
+
+    return this.nombre;
 
   }
-
-
 
 
 
@@ -62,10 +102,8 @@ public class Personaje {
 
   public int getVida(){
 
-    return this.vida;
+    return vida;
 
   }
-
-
 
 }
